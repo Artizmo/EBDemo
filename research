@@ -1,0 +1,27 @@
+
+Icon resource
+https://remixicon.com/
+
+SOLID Principles in React
+
+S - single function
+  * components should do one thing
+  * limited side effects
+
+O - open/close
+  * composition should be used such that base components are closed for implementation but open for extension
+  * ex. IconButton composes Button but should not require changes to IconButton
+
+L - Liskov's substitution
+  * Components that compose base components should be able be substituted for the base component
+  * ex. Swapping IconButton for Button should work
+  * TypeScript would utilize props of the base component
+
+I - interface segregation
+  * Components that compose a base component are using only those functions of the base component that they need.
+  * If the base component does more than is needed, it may need to be broken down further into smaller base components via composition.
+  * The component itself should only retrieve props it needs.
+
+D - dependency inversion
+  * Components should require abstract props according to their nature.
+  * ie. ListComponent that renders a list shouldn't be opinionated about the list itself, where it comes from, or how it's retrieved.

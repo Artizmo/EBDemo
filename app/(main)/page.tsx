@@ -1,12 +1,16 @@
-import Link from 'next/link'
+import Image from 'next/image'
 
 export default function MainPage() {
   return (
     <div>
-      <div>Eddie Bauer</div>
-      <Link href="/checkout">Checkout</Link>
-      <Link href="/products">Products</Link>
-      <Link href="/cart">Cart</Link>
+      <Image
+        src="/promo.webp"
+        alt=""
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: 'auto' }}
+      />
     </div>
   )
 }
