@@ -9,8 +9,6 @@ export default function MainPage() {
         priority
         width={1650}
         height={445}
-        sizes="100vw"
-        style={{ width: '100%', height: 'auto' }}
       />
     </div>
   )
