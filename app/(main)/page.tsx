@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-export default function MainPage() {
+export default async function MainPage() {
+
   return (
     <div>
       <Image
@@ -9,6 +10,8 @@ export default function MainPage() {
         priority
         width={1650}
         height={445}
+        placeholder="blur"
+        blurDataURL="/promo_thumbnail.webp"
       />
     </div>
   )
