@@ -6,8 +6,9 @@ export default function MainPage() {
       <Image
         src="/promo.webp"
         alt=""
-        width={0}
-        height={0}
+        priority
+        width={1650}
+        height={445}
         sizes="100vw"
         style={{ width: '100%', height: 'auto' }}
       />
