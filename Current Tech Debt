@@ -1,0 +1,45 @@
+Current Tech Debt
+-examples of tech debt
+
+Cost of Tech Debt
+- 10-20% of tech budget is spent on tech debt
+  1. bug tickets (current state of code)
+  2. code hacks and work-arounds (rigid codebase)
+  3. dev turnover, morale
+  4. everything feeds back into #1, circular
+- More likely to be locked in with current tech stack
+  - harder to upgrade
+  - can't easily use new tech
+  - effects 81% of companies with tech debt
+- Time is expensive
+  - defect ratios (new:old, defect:feature)
+  - dev time
+  - code quality
+  - rework
+  - devs waste ~18% of their time on TD
+  - devs spend ~40% of their time a week with some aspect of TD
+- When tech does too much
+  - all-in-one libraries, frameworks, solutions
+  - ready to ship code, hard to customize
+  - pricy solutions
+
+
+Ways To Fix It
+-tech
+-coding styles
+
+Benefits of Mitigated Tech Debt
+-list
+
+Forward Thinking
+- 25-75% reduction just by taking proactive measures
+
+-code reusability
+-maintainability
+
+
+
+Resources
+https://stripe.com/files/reports/the-developer-coefficient.pdf
+https://www.techtarget.com/searchitoperations/tip/How-to-track-and-measure-technical-debt
+https://codescene.com/hubfs/calculate-business-costs-of-technical-debt.pdf
