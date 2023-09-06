@@ -10,8 +10,6 @@ export default async function MainPage() {
         priority
         width={1650}
         height={445}
-        placeholder="blur"
-        blurDataURL="/promo_thumbnail.webp"
       />
     </div>
   )
