@@ -1,12 +1,15 @@
-import dynamic from 'next/dynamic'
+import Image from 'next/image'
 
-const Promo = dynamic(() => import('@/app/(main)/promo'), { ssr: false })
-
-export default async function MainPage() {
-
+export default function MainPage() {
   return (
-    <div>
-      <Promo />
+    <div className="w-[1650px] h-[445px]">
+      <Image
+        src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1693951141/EBDemo/promo.webp"
+        alt=""
+        sizes="90vw"
+        priority
+        className="w-full h-auto"
+      />
     </div>
   )
 }
