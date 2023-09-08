@@ -18,7 +18,7 @@ function SearchBar({ ...props }: SearchBarProps) {
 function Toolbar() {
   return (
     <div className="text-[14px]">
-      LABOR DAY SALE - 50% OFF <b>VIEW OFFERS</b>
+      30% OFF RAIN JACKETS & GEAR <b>VIEW OFFERS</b>
     </div>
   )
 }
