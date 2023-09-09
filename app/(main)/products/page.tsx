@@ -13,9 +13,12 @@ type Product = {
 }
 
 const getProducts = async (): Promise<Product[]> => {
-  const TIMER = Math.floor(Math.random() * 4000) + 2000
+  const TIMER = Math.floor(Math.random() * 4000) + 1000
   return new Promise((resolve) => {
-      setTimeout(() => resolve(productsData), TIMER);
+    setTimeout(() => {
+      console.log('bingo', TIMER)
+      return resolve(productsData)
+    }, TIMER);
   });
 }
 

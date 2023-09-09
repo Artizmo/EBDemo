@@ -13,7 +13,8 @@ const config: Config = {
       green: '#bed600',
       teal: '#0099A8',
       white: '#f3f3f3',
-      'light-gray': '#b2b2b2',
+      'light-gray': '#f7f7f7',
+      gray: '#b2b2b2',
       black: '#363232'
     }
   },

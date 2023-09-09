@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from '@/components/icons/logo'
 import BagIcon from '@/components/icons/bag'
 import AdventureIcon from '@/components/icons/adventure'
 
@@ -45,25 +45,16 @@ export default function HeaderLayout({ children }: LayoutProps) {
           </div>
         </section>
 
-        <section className="p-4 flex">
-          <div className="flex items-center flex-1">
+        <section className="p-2 flex">
+          <div className="p-2 flex items-center flex-1">
             <Link href="/">
-              <Image
-                src="/logo.svg"
-                alt=""
-                priority
-                width={1650}
-                height={445}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
-              {/* <LogoIcon className="fill-black w-[120px] sm:w-[140px] ml-[2.5rem]" /> */}
+              <Logo className="fill-black w-[120px] sm:w-[140px]" />
             </Link>
           </div>
-          <div className="flex items-center flex-1">
+          <div className="p-2 flex items-center flex-1">
             <SearchBar />
           </div>
-          <div className="w-[10%] flex items-center justify-end flex-1 mr-10">
+          <div className="p-2 w-[10%] flex items-center justify-end flex-1 mr-[2rem]">
             <Link href="/cart">
               <div className="flex">
                 <BagIcon className="fill-teal w-[32px] mr-3" />
@@ -76,17 +67,13 @@ export default function HeaderLayout({ children }: LayoutProps) {
           </div>
         </section>
 
-        <nav className="text-black font-medium uppercase text-[14px] p-2 flex justify-center gap-x-10 hover:[&>a]:shadow-[0_2px_0_0_teal]">
-          <Link href="/products">new!</Link>
+        <nav className="bg-light-gray p-3 text-black font-medium uppercase text-[14px] flex justify-center gap-x-10 hover:[&>a]:shadow-[0_4px_0_0_teal]">
           <Link href="/products">women</Link>
           <Link href="/products">men</Link>
-          <Link href="/products">kids</Link>
           <Link href="/products">outerwear</Link>
-          <Link href="/products">gear</Link>
-          <Link href="/products">shoes</Link>
-          <Link href="/products">home</Link>
-          <Link href="/products">sale</Link>
-          <Link href="/products" className="text-red">clearance</Link>
+          <Link href="/products">kids</Link>
+          <Link href="/products">gear & home</Link>
+          <Link href="/products" className="text-red">clearance & sale</Link>
           <Link href="/products">about us</Link>
         </nav>
       </header>

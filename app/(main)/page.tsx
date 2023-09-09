@@ -8,6 +8,8 @@ export default function MainPage() {
         alt=""
         sizes="90vw"
         priority
+        width={0}
+        height={0}
         className="w-full h-auto"
       />
     </div>
