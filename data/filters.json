@@ -1,0 +1,19 @@
+[
+  { "label": "categories", "options": [
+    { "label": "casual", "value": "casual" },
+    { "label": "performance", "value": "performance" },
+    { "label": "thermals", "value": "thermals" }
+  ]},
+  { "label": "size types", "options": [
+    { "label": "regular", "value": "regular" },
+    { "label": "tall", "value": "tall" },
+    { "label": "petite", "value": "petite" },
+    { "label": "plus", "value": "plus" }
+  ]},
+  { "label": "size", "options": [
+    { "label": "l", "value": "l" },
+    { "label": "m", "value": "m" },
+    { "label": "s", "value": "s" },
+    { "label": "xs", "value": "pluxss" }
+  ]}
+]

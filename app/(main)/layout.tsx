@@ -3,9 +3,7 @@ import Logo from '@/components/icons/logo'
 import BagIcon from '@/components/icons/bag'
 import AdventureIcon from '@/components/icons/adventure'
 
-type baseProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement>
-type SearchBarProps = {
-} & baseProps
+type SearchBarProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 function SearchBar({ ...props }: SearchBarProps) {
   return (
@@ -58,16 +56,16 @@ export default function HeaderLayout({ children }: LayoutProps) {
             <Link href="/cart">
               <div className="flex">
                 <BagIcon className="fill-teal w-[32px] mr-3" />
-                <div className="flex flex-col">
+                <div className="flex flex-col leading-[normal]">
                   <div className="text-[14px] font-semibold uppercase">Shopping Bag</div>
-                  <div className="text-[12px] font-normal uppercase">(2) items</div>
+                  <div className="text-[14px] font-normal"><span className="text-black font-semibold">2</span> items</div>
                 </div>
               </div>
             </Link>
           </div>
         </section>
 
-        <nav className="bg-light-gray p-3 text-black font-medium uppercase text-[14px] flex justify-center gap-x-10 hover:[&>a]:shadow-[0_4px_0_0_teal]">
+        <nav className="bg-light-gray p-3 text-black font-medium uppercase text-[16px] flex justify-center gap-x-10 hover:[&>a]:shadow-[0_4px_0_0_teal]">
           <Link href="/products">women</Link>
           <Link href="/products">men</Link>
           <Link href="/products">outerwear</Link>
@@ -77,7 +75,7 @@ export default function HeaderLayout({ children }: LayoutProps) {
           <Link href="/products">about us</Link>
         </nav>
       </header>
-      <div className="flex flex-col flex-1">{children}</div>
+      <div className="flex flex-col flex-1 items-center">{children}</div>
     </div>
   )
 };
