@@ -3,6 +3,7 @@ import products from '@/data/products.json'
 import filters from '@/data/filters.json'
 import EBCheckbox from '@/components/ui/EBCheckbox'
 import ProductsGrid from '@/app/(main)/products/components/products-grid'
+import ProductsGridSkeleton from '@/app/(main)/products/components/products-grid-skeleton'
 
 type Product = {
   id: string
@@ -32,7 +33,7 @@ type ProductResponse = {
 }
 
 const getProducts = async (): Promise<ProductResponse> => {
-  const TIMER = Math.floor(Math.random() * 4000) + 1000
+  const TIMER = Math.floor(Math.random() * 8000) + 1000
   return new Promise((resolve) => {
     setTimeout(() => {
       return resolve({ filters, products })
@@ -62,7 +63,7 @@ export default async function ProductsPage() {
           </Suspense>
         </div>
         <div className="grid gap-4 grid-cols-[repeat(2,1fr)] md:lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<ProductsGridSkeleton />}>
             <ProductsGrid />
           </Suspense>
         </div>
