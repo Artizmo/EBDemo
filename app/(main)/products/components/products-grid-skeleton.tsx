@@ -1,23 +1,7 @@
-import Image from 'next/image'
-import productsData from '@/data/products.json'
-
-type Product = {
-  id: string
-  label: string
-  thumbnail: string
-  thumbnailEB: string
-  colors: string[]
-  price: string
-  rating?: number | null
-  reviewCount?: number | null
-  promo?: string | null
-}
-
 const skeletonProducts = new Array(20).fill(null)
 const skeletonColors = new Array(6).fill(null)
 
 export default async function ProductsGridSkeleton() {
-
   return (
     <>
       {skeletonProducts.map((_, i) => (

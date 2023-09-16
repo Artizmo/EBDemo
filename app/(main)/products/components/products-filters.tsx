@@ -12,7 +12,7 @@ type Filter = {
 }
 
 const getFilters = async (): Promise<Filter[]> => {
-  const TIMER = Math.floor(Math.random() * 8000) + 1000
+  const TIMER = Math.floor(Math.random() * 80) + 10
   return new Promise((resolve) => {
     setTimeout(() => {
       return resolve(filters)
