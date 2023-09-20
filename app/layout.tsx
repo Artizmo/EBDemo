@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description: 'This is a tech stack demo',
   viewport: {
     width: 'device-width',
-    // initialScale: 1,
     maximumScale: 1
   }
 }
