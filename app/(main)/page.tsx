@@ -6,8 +6,8 @@ export default function MainPage() {
       <h2 className="absolute text-[39px] text-[white] font-bold leading-[normal] mb-40 p-4 bottom-0">
         Waterproof Jacket For Your Spring Adventures
       </h2>
-      <div className="bg-black ml-4 absolute text-[white] font-normal leading-[normal] mb-32 p-2 bottom-0">Women</div>
-      <div className="bg-black ml-32 absolute text-[white] font-normal leading-[normal] mb-32 p-2 bottom-0">Men</div>
+      <div className="bg-black-50 ml-4 absolute text-[white] font-normal leading-[normal] mb-32 p-2 bottom-0">Women</div>
+      <div className="bg-black-50 ml-32 absolute text-[white] font-normal leading-[normal] mb-32 p-2 bottom-0">Men</div>
       <Image
         src="/splash3.png"
         alt=""

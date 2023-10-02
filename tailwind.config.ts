@@ -15,7 +15,8 @@ const config: Config = {
       white: '#f3f3f3',
       'light-gray': '#f9f9f9',
       gray: '#5a5a5a',
-      black: '#363232'
+      black: '#363232',
+      'black-50': '#00000099'
     },
     screens: {
       sm: [{
