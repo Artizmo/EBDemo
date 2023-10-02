@@ -9,7 +9,21 @@ export default function Header() {
   return (
     <section className="relative md:p-2 flex">
       <div className="w-full flex flex-1 md:hidden absolute p-2 items-center justify-between">
-        <div className="flex-[25%] mx-4 my-0">
+        <div className="flex md:hidden w-full relative p-2 items-center md:justify-normal">
+          <Link href="/">
+            <Logo className="fill-white w-[150px]" />
+          </Link>
+        </div>
+        <div className="mx-3 my-0">
+          <SearchIcon className="fill-white" />
+        </div>
+        <div className="mx-3 my-0">
+          <BagIcon className="fill-white" />
+        </div>
+        <div className="mx-3 my-0">
+          <MenuIcon className="fill-white" />
+        </div>
+        {/* <div className="flex-[25%] mx-4 my-0">
           <SearchIcon className="fill-white" />
         </div>
         <div className="flex justify-center md:hidden w-full relative p-2 items-center md:justify-normal">
@@ -22,7 +36,7 @@ export default function Header() {
         </div>
         <div className="flex-[12.5%] mx-2 my-0">
           <MenuIcon className="fill-white" />
-        </div>
+        </div> */}
       </div>
 
       <div className="hidden md:flex w-full relative p-4 items-center justify-between md:justify-normal flex-1">
