@@ -14,7 +14,7 @@ const config: Config = {
       teal: '#0099A8',
       white: '#f3f3f3',
       'light-gray': '#f9f9f9',
-      gray: '#b2b2b2',
+      gray: '#5a5a5a',
       black: '#363232'
     },
     screens: {
