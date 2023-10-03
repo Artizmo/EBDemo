@@ -8,7 +8,7 @@ import ScrollHeader from '@/app/(main)/components/scroll-header'
 
 export default function Header() {
   return (
-    <div className="sticky top-0 z-[1] shadow-[0px_1px_4px_#00000044]">
+    <div className="sticky md:relative top-0 z-[1] md:shadow-[unset] shadow-[0px_1px_4px_#00000044]">
       <section className="md:p-2 flex">
         <ScrollHeader>
           <div className="flex md:hidden w-full relative p-2 items-center md:justify-normal">
