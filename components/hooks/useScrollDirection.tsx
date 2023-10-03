@@ -8,10 +8,10 @@ export default function useScrollDirection() {
 
     const updateScrollDirection = () => {
       const scrollY = window.scrollY;
-      if (scrollY === 0) return setScrollDirection(null)
+      if (scrollY === 0) return setScrollDirection('equal')
 
       const direction: string = scrollY > lastScrollY ? "down" : "up";
-      if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+      if (direction !== scrollDirection && (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)) {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;

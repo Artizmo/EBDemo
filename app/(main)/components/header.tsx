@@ -8,21 +8,21 @@ import ScrollHeader from '@/app/(main)/components/scroll-header'
 
 export default function Header() {
   return (
-    <section className="relative md:p-2 flex">
+    <section className="md:p-2 flex">
       <ScrollHeader>
         <div className="flex md:hidden w-full relative p-2 items-center md:justify-normal">
           <Link href="/">
-            <Logo className="header-logo fill-white w-[135px]" />
+            <Logo className="header-logo fill-white w-[130px]" />
           </Link>
         </div>
         <div className="mx-3 my-0">
-          <SearchIcon className="header-icon fill-white" />
+          <SearchIcon className="header-icon fill-white w-[18px]" />
         </div>
         <div className="mx-3 my-0">
-          <BagIcon className="header-icon fill-white" />
+          <BagIcon className="header-icon fill-white w-[18px]" />
         </div>
         <div className="mx-3 my-0">
-          <MenuIcon className="header-icon fill-white" />
+          <MenuIcon className="header-icon fill-white w-[18px]" />
         </div>
       </ScrollHeader>
         <div className="hidden md:flex w-full relative p-4 items-center justify-between md:justify-normal flex-1">

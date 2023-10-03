@@ -6,12 +6,12 @@ type LayoutProps = { children: React.ReactNode };
 
 export default function HeaderLayout({ children }: LayoutProps) {
   return (
-    <div className="relative flex flex-col flex-1">
-      <header className="flex flex-col shadow-[0_1px_0_0_#d6d6d6]">
-        <Banner />
+    <div className=" flex flex-col flex-1">
+      <Banner />
+      <div className="sticky top-0 z-[1]">
         <Header />
-        <Navbar />
-      </header>
+      </div>
+      <Navbar />
       <div className="flex-col flex-1 items-center">{children}</div>
     </div>
   )
