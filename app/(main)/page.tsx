@@ -3,11 +3,11 @@ import Image from 'next/image'
 export default function MainPage() {
   return ( 
     <div className="w-full h-[445px]">
-      <h2 className="absolute text-[39px] text-[white] font-bold leading-[normal] mb-40 p-4 bottom-0">
+      <h2 className="absolute text-[39px] text-[white] font-bold leading-[normal] mb-40 p-4 bottom-0 md:hidden">
         Waterproof Jacket For Your Spring Adventures
       </h2>
-      <div className="bg-black-50 min-w-[5rem] flex justify-center ml-4 absolute text-[white] font-light leading-[normal] mb-32 p-2 bottom-0">Women</div>
-      <div className="bg-black-50 min-w-[5rem] flex justify-center ml-32 absolute text-[white] font-light leading-[normal] mb-32 p-2 bottom-0">Men</div>
+      <div className="bg-black-50 min-w-[5rem] flex justify-center ml-4 absolute text-[white] font-light leading-[normal] mb-32 p-2 bottom-0 md:hidden">Women</div>
+      <div className="bg-black-50 min-w-[5rem] flex justify-center ml-32 absolute text-[white] font-light leading-[normal] mb-32 p-2 bottom-0 md:hidden">Men</div>
       <Image
         src="/splash3.png"
         alt=""
@@ -35,10 +35,37 @@ export default function MainPage() {
         height={0}
         className="hidden md:block w-full h-auto"
       />
-      <article>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin erat sit amet nulla consectetur, id commodo leo pretium. Phasellus imperdiet non mi quis tristique. Curabitur at lacinia velit. Proin fermentum in quam a imperdiet. Quisque vestibulum, risus ornare blandit pharetra, arcu velit placerat arcu, in vulputate quam nulla non massa. Nam eleifend arcu id maximus condimentum. Donec id lectus tellus. Nulla facilisi. Sed molestie dignissim nunc nec tincidunt. Sed ut aliquet nunc, quis ullamcorper massa. Etiam varius at libero faucibus pulvinar.
-
-  Nunc sed ex risus. Donec elementum nunc purus, nec varius lacus consequat id. Nulla vestibulum mi at odio efficitur hendrerit. Phasellus sollicitudin magna nec lectus varius, gravida consequat nunc mollis. Nunc sit amet erat nec ante pharetra rhoncus. Sed varius placerat arcu sed molestie. Nam nec diam pharetra, blandit ipsum eu, varius risus.
+      <article className="absolute p-4 gap-x-4 flex flex-col md:hidden">
+        <h2 className="text-[26px] font-medium">Style Inspiration</h2>
+        <h3 className="text-[16px] font-light">Your favorite styles, scaled up to perfection, just for you.</h3>
+        <div className="mt-4 gap-x-4 flex md:hidden">
+          <section>
+            <Image
+              src="/productA.png"
+              alt=""
+              sizes="100vw"
+              width={0}
+              height={0}
+              priority
+              className="w-auto h-[250px] max-w-[unset]"
+            />
+            <p className="w-full min-w-[10rem]">Women's Super Sevens Wind Jacket</p>
+            <p>$129.00</p>
+          </section>
+          <section>
+            <Image
+              src="/productC.png"
+              alt=""
+              sizes="100vw"
+              width={0}
+              height={0}
+              priority
+              className="w-auto h-[250px] max-w-[unset]"
+            />
+            <p className="w-full min-w-[10rem]">Women's Super Sevens Wind Jacket</p>
+            <p>$129.00</p>
+          </section>
+        </div>
       </article>
     </div>
   )
