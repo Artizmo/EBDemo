@@ -54,7 +54,7 @@ export default function MainPage() {
           </section>
           <section>
             <Image
-              src="/productC.png"
+              src="/productB.png"
               alt=""
               sizes="100vw"
               width={0}
