@@ -27,20 +27,21 @@ export default async function ProductsGrid() {
 
   return (
     <section className="flex flex-col">
-      <div className="my-2 capitalize font-normal">{products.length} items</div>
+      <div className="my-2 capitalize font-normal text-[14px]">{products.length} items</div>
       <div className="grid gap-4 grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
         {products.map(product => (
           <div key={product.id}>
-            <Image src={product.thumbnailEB} alt="" width={400} height={400} className="" />
-            <div className="gap-x-2 px-0 py-2 flex">
-              {product.colors.map(color => (
-                <div key={color} style={{ backgroundColor: color }} className={`w-6 h-6 rounded-full`} />
+            <Image src={product.thumbnailEB} alt="" width={400} height={400} />
+            <div className="flex items-center gap-x-2 px-0 py-2">
+              {product.colors.slice(0, 4).map(color => (
+                <div key={color} style={{ backgroundColor: color }} className={`w-[1.25rem] h-[1.25rem] rounded-full`} />
               ))}
+              <span className="text-[12px]">{product.colors.length > 4 && `+ ${product.colors.length}`}</span>
             </div>
-            <div>{product.label}</div>
-            <div>{product.price}</div>
-            <div>{product.rating} stars ({product.reviewCount} reviews)</div>
-            {product.promo ? <div className="text-red font-light">{`w/ CODE ${product.promo}`}</div> : null}
+            <div className="text-[12px]">{product.label}</div>
+            <div className="text-[12px] font-bold">{product.price}</div>
+            <div className="text-[12px]">{product.rating} stars ({product.reviewCount} reviews)</div>
+            {product.promo ? <div className="text-[12px] text-red font-bold uppercase">{`w/ CODE ${product.promo}`}</div> : null}
           </div>
         ))}
       </div>
