@@ -49,7 +49,7 @@ export default function MainPage() {
               priority
               className="w-auto h-[250px] max-w-[unset]"
             />
-            <p className="w-full min-w-[10rem]">Women's Super Sevens Wind Jacket</p>
+            <p className="w-full min-w-[10rem]">Women&apos;s Super Sevens Wind Jacket</p>
             <p>$129.00</p>
           </section>
           <section>
