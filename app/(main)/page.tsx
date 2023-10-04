@@ -9,16 +9,16 @@ export default function MainPage() {
       <div className="border font-normal border-solid min-w-[5rem] flex justify-center ml-4 absolute text-[white] leading-[normal] mb-[-8rem] p-2 bottom-0 md:hidden">Women</div>
       <div className="border font-normal border-solid min-w-[5rem] flex justify-center ml-32 absolute text-[white] leading-[normal] mb-[-8rem] p-2 bottom-0 md:hidden">Men</div>
       <Image
-        src="/splash3.png"
+        src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/splash3.webp"
         alt=""
         sizes="90vw"
         priority
         width={0}
         height={0}
-        className="block md:hidden w-full h-screen object-cover"
+        className="md:hidden w-full h-screen object-cover"
       />
       <Image
-        src="/promo3.gif"
+        src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/promo4.gif"
         alt=""
         sizes="90vw"
         priority
@@ -41,7 +41,7 @@ export default function MainPage() {
         <div className="mt-4 gap-x-4 flex md:hidden">
           <section>
             <Image
-              src="/productA.png"
+              src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/productA.webp"
               alt=""
               sizes="100vw"
               width={0}
@@ -54,7 +54,7 @@ export default function MainPage() {
           </section>
           <section>
             <Image
-              src="/productB.png"
+              src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/productB.webp"
               alt=""
               sizes="100vw"
               width={0}
