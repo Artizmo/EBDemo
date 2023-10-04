@@ -15,7 +15,7 @@ export default function MainPage() {
         priority
         width={0}
         height={0}
-        className="md:hidden w-full h-screen object-cover"
+        className="block md:hidden w-full h-screen object-cover"
       />
       <Image
         src="/promo3.gif"
