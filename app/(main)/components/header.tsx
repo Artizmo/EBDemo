@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Logo from '@/components/icons/logo'
 import Searchbar from '@/app/(main)/components/searchbar'
 import SearchIcon from '@/components/icons/search'
 import MenuIcon from '@/components/icons/menu'
 import BagIcon from '@/components/icons/bag'
-import ScrollHeader from '@/app/(main)/components/scroll-header'
+// import ScrollHeader from '@/app/(main)/components/scroll-header'
+
+const ScrollHeader = dynamic(() => import('@/app/(main)/components/scroll-header'))
 
 export default function Header() {
   return (
-    <div className="sticky top-0 z-[1] shadow-[0px_1px_4px_#00000044]">
+    <div className="sticky md:relative top-0 z-[1] md:shadow-[unset] shadow-[0px_1px_4px_#00000044]">
       <section className="md:p-2 flex">
         <ScrollHeader>
           <div className="flex md:hidden w-full relative p-2 items-center md:justify-normal">
