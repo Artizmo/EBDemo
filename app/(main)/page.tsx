@@ -11,7 +11,7 @@ export default function MainPage() {
       <Image
         src="/splash3.png"
         alt=""
-        sizes="100vw"
+        sizes="90vw"
         priority
         width={0}
         height={0}
