@@ -1,10 +1,13 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import Logo from '@/components/icons/logo'
 import Searchbar from '@/app/(main)/components/searchbar'
 import SearchIcon from '@/components/icons/search'
 import MenuIcon from '@/components/icons/menu'
 import BagIcon from '@/components/icons/bag'
-import ScrollHeader from '@/app/(main)/components/scroll-header'
+// import ScrollHeader from '@/app/(main)/components/scroll-header'
+
+const ScrollHeader = dynamic(() => import('@/app/(main)/components/scroll-header'))
 
 export default function Header() {
   return (
