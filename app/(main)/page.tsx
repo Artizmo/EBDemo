@@ -12,7 +12,7 @@ export default function MainPage() {
         src="/splash3.png"
         alt=""
         sizes="90vw"
-        // priority
+        priority
         width={0}
         height={0}
         className="md:hidden w-full h-screen object-cover"
