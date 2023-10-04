@@ -6,7 +6,7 @@ type LayoutProps = { children: React.ReactNode };
 
 export default function HeaderLayout({ children }: LayoutProps) {
   return (
-    <div className="absolute inset-x-0 flex flex-col flex-1">
+    <div className="absolute overflow-x-clip inset-x-0 flex flex-col flex-1">
       <Banner />
       <Header />
       <Navbar />
