@@ -1,0 +1,66 @@
+[
+  {
+  "label": "new!",
+    "url": "",
+    "categories": [
+      {
+        "label": "shop by category",
+        "url": "",
+        "categories": [
+          {
+            "label": "women",
+            "url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "women",
+    "url": "",
+    "categories": [
+      {
+        "label": "tops",
+        "url": "",
+        "categories": [
+          {
+            "label": "sweatshirts & hoodies",
+            "url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "men",
+    "url": "",
+    "categories": [
+      {
+        "label": "pants",
+        "url": "",
+        "categories": [
+          {
+            "label": "casual",
+            "url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "kids",
+    "url": "",
+    "categories": [
+      {
+        "label": "tops",
+        "url": "",
+        "categories": [
+          {
+            "label": "t-shirts",
+            "url": ""
+          }
+        ]
+      }
+    ]
+  }
+]
