@@ -12,7 +12,6 @@ export default function NavbarMenu({ children }: NavbarMenuProps) {
   const [show, setShow] = useState(false)
 
   const handleOnClick = () => {
-    console.log('bingo click')
     setShow(show => !show)
   }
 

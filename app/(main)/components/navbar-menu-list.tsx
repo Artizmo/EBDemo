@@ -4,6 +4,7 @@ import EBMenuList from '@/components/ui/EB-menu-list'
 type Category = {
   label: String
   url: String
+  test?: String
   categories?: Category[]
 }
 
@@ -20,6 +21,6 @@ export default async function NavbarMenuList() {
   const categories: Category[] = await getCategories()
 
   return (
-    <EBMenuList<Category> list={categories} />
+    <EBMenuList list={categories} />
   )
 }

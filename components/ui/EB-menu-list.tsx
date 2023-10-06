@@ -1,22 +1,21 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
-type EBMenuListItem<T> = {
+type EBMenuListItem = {
   label: String
   url: String
-  categories?: T[]
+  categories?: EBMenuListItem[]
 }
 
-type EBMenuListProps<T> = {
-  list: T[]
+type EBMenuListProps = {
+  list: EBMenuListItem[]
 }
 
 type EBMenuListItemProps = {
   label: String
   url: String
   onNext: () => void
-  onPrev: () => void
 }
 
 export function EBMenuListItem({ label, url, onNext }: EBMenuListItemProps) {
@@ -27,23 +26,33 @@ export function EBMenuListItem({ label, url, onNext }: EBMenuListItemProps) {
   )
 }
 
-export default function EBMenuList<T extends EBMenuListItem<T>>({ list }: EBMenuListProps<T>) {
-  const [menu, setMenu] = useState<T[]>([])
+export default function EBMenuList({ list }: EBMenuListProps) {
+  // const [previousMenu, setPrevMenu] = useState<T[]>(list)
+  // const [currentMenu, setCurrentMenu] = useState<T[]>(list)
+  const [menus, setMenus] = useState([list])
+  const menu = useMemo(() => menus.at(-1), [menus])
 
-  const handleOnNextClick = (item: T) => {
-    console.log('bingo item', item)
-    setMenu(menu => [...menu, item])
+  console.log('bingo menus', menus)
+
+  const handleOnNextClick = (item: any) => {
+    if (item?.categories) {
+      console.log('bingo item', item)
+      setMenus(menus => [...menus, item.categories])
+    }
   }
 
   const handleOnPrevClick = () => {
-    setMenu(menu => menu.slice(0, -1))
+    if (menus.length === 1) return
+    
+    console.log('bingo prev', menus.slice(0, -1))
+    setMenus(menus.slice(0, -1))
   }
 
   return (
     <div className="">
       <div onClick={handleOnPrevClick}>back</div>
-      {list.map((item, i) => (
-        <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} onPrev={handleOnPrevClick} label={item.label} url={item.url} />
+      {menu?.map((item, i) => (
+        <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} label={item.label} url={item.url} />
       ))}
     </div>
   )
