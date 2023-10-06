@@ -56,7 +56,7 @@ export default function EBMenuList({ list }: EBMenuListProps) {
   return (
     <>
       {show ? (
-        <section className="shadow-[-2px_0px_2px_2px_#5d5d5d7d] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
+        <section className="shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
           <header className="flex justify-between">
             <button onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
             <button onClick={handleOnClose}>X</button>
