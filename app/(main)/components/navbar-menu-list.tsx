@@ -1,4 +1,5 @@
 import categoryData from '@/data/categories.json'
+import EBMenuList from '@/components/ui/EB-menu-list'
 
 type Category = {
   label: String
@@ -19,10 +20,6 @@ export default async function NavbarMenuList() {
   const categories: Category[] = await getCategories()
 
   return (
-    <div>
-      {categories.map((category, i) => (
-        <div key={i}>{category.label}</div>
-      ))}
-    </div>
+    <EBMenuList<Category> list={categories} />
   )
 }
