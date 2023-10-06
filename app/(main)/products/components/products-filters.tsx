@@ -1,5 +1,5 @@
 import filters from '@/data/filters.json'
-import EBCheckbox from '@/components/ui/EBCheckbox'
+import EBCheckbox from '@/components/ui/EB-checkbox'
 
 type FilterOption = {
   label: string,
