@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import MenuIcon from '@/components/icons/menu'
 
 type EBMenuListItem = {
   label: String
@@ -21,39 +22,63 @@ type EBMenuListItemProps = {
 export function EBMenuListItem({ label, url, onNext }: EBMenuListItemProps) {
   return (
     <div>
-      <span onClick={onNext}>menu item {label} - {url}</span>
+      <button onClick={onNext} className="font-medium">{label}</button>
     </div>
   )
 }
 
 export default function EBMenuList({ list }: EBMenuListProps) {
-  // const [previousMenu, setPrevMenu] = useState<T[]>(list)
-  // const [currentMenu, setCurrentMenu] = useState<T[]>(list)
-  const [menus, setMenus] = useState([list])
-  const menu = useMemo(() => menus.at(-1), [menus])
+  const [menus, setMenus] = useState<EBMenuListItem[][]>([list])
+  const [show, setShow] = useState(false)
+  
+  const menu = useMemo(() => {
+    const nextMenu = menus.at(-1) ?? []
+    return nextMenu
+  }, [menus])
 
-  console.log('bingo menus', menus)
-
-  const handleOnNextClick = (item: any) => {
+  const handleOnNextClick = (item: EBMenuListItem) => {
     if (item?.categories) {
-      console.log('bingo item', item)
-      setMenus(menus => [...menus, item.categories])
+      setMenus([...menus, item.categories])
     }
   }
 
   const handleOnPrevClick = () => {
     if (menus.length === 1) return
-    
-    console.log('bingo prev', menus.slice(0, -1))
-    setMenus(menus.slice(0, -1))
+
+    setMenus(menus => menus.slice(0, -1))
+  }
+
+  const handleOnClose = () => {
+    setShow(false)
+    setMenus([list])
   }
 
   return (
-    <div className="">
-      <div onClick={handleOnPrevClick}>back</div>
-      {menu?.map((item, i) => (
-        <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} label={item.label} url={item.url} />
-      ))}
-    </div>
+    <>
+      {show ? (
+        <section className="shadow-[-2px_0px_2px_2px_#5d5d5d7d] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
+          <header className="flex justify-between">
+            <button onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
+            <button onClick={handleOnClose}>X</button>
+          </header>
+          <section className="pt-8 flex flex-col gap-y-4">
+            {menu?.map((item, i) => (
+              <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} label={item.label} url={item.url} />
+            ))}
+          </section>
+          <footer className="pt-8 flex flex-col gap-y-4">
+            <div>Account Profile</div>
+            <div>Current Orders</div>
+            <div>My Wishlist</div>
+            <div>My Store</div>
+            <div>Signout</div>
+          </footer>
+        </section>
+      ) : (
+        <button className="" onClick={() => setShow(true)}>
+          <MenuIcon className="header-icon fill-white w-[18px]" />
+        </button>
+      )}
+    </>
   )
 }

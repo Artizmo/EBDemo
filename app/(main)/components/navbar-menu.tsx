@@ -1,32 +1,32 @@
-'use client'
+import categoryData from '@/data/categories.json'
+import EBMenuList from '@/components/ui/EB-menu-list'
 
-import { useState } from 'react'
-import MenuIcon from '@/components/icons/menu'
-import EBMenu from '@/components/ui/EB-menu'
-
-type NavbarMenuProps = {
-  children: React.ReactElement
+type Category = {
+  label: String
+  url: String
+  test?: String
+  categories?: Category[]
 }
 
-export default function NavbarMenu({ children }: NavbarMenuProps) {
-  const [show, setShow] = useState(false)
+const getCategories = async (): Promise<Category[]> => {
+  const TIMER = Math.floor(Math.random() * 1000) + 200
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      return resolve(categoryData)
+    }, TIMER);
+  });
+}
 
-  const handleOnClick = () => {
-    setShow(show => !show)
-  }
+const EBThirdPartyComp = () => {
+  return (
+    <div>Bloomreach data, for ex.</div>
+  )
+}
 
-  const handleOnClose = () => {
-    setShow(show => !show)
-  }
+export default async function NavbarMenu() {
+  const categories: Category[] = await getCategories()
 
   return (
-    <>
-      <button className="" onClick={handleOnClick}>
-        <MenuIcon className="header-icon fill-white w-[18px]" />
-      </button>
-      <EBMenu show={show} onClose={handleOnClose}>
-        {children}
-      </EBMenu>
-    </>
+    <EBMenuList list={categories} />
   )
 }

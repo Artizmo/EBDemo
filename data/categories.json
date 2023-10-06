@@ -24,6 +24,16 @@
         "categories": [
           {
             "label": "Star Wars",
+            "url": "",
+            "categories": [
+              {
+                "label": "The Empire Strikes Back",
+                "url": ""
+              }
+            ]
+          },
+          {
+            "label": "Braveheart",
             "url": ""
           }
         ]

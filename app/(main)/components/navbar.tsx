@@ -5,7 +5,6 @@ import SearchIcon from '@/components/icons/search'
 import BagIcon from '@/components/icons/bag'
 import NavbarScroller from '@/app/(main)/components/navbar-scroller'
 import NavbarMenu from './navbar-menu'
-import NavbarMenuList from '@/app/(main)/components/navbar-menu-list'
 
 export default function Navbar() {
   return (
@@ -24,9 +23,7 @@ export default function Navbar() {
             <BagIcon className="fill-white w-[18px]" />
           </div>
           <div className="flex mx-3 my-0">
-            <NavbarMenu>
-              <NavbarMenuList />
-            </NavbarMenu>
+            <NavbarMenu />
           </div>
         </NavbarScroller>
           <div className="hidden md:flex w-full relative p-4 items-center justify-between md:justify-normal flex-1">
