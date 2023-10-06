@@ -20,8 +20,8 @@ export default async function NavbarMenuList() {
 
   return (
     <div>
-      {categories.map(category => (
-        <div>{category.label}</div>
+      {categories.map((category, i) => (
+        <div key={i}>{category.label}</div>
       ))}
     </div>
   )
