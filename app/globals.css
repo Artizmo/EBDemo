@@ -17,6 +17,7 @@
 
   .dark-gradient {
     position: relative;
+    display: inline-block;
   }
   .dark-gradient:after {
     content: '';
