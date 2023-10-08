@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function MainPage() {
   return ( 
-    <div className="w-full h-[445px] dark-gradient">
+    <div className="w-full h-[445px] dark-gradient font-interstate">
       <h2 className="absolute text-white text-[42px] font-normal uppercase leading-[48px] p-4 bottom-0 md:hidden">
         experience the outdoor & live your adventure
       </h2>

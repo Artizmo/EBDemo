@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        Interstate: ['var(--font-interstate)']
+        interstate: ['var(--font-interstate)']
       }
     },
     colors: {
