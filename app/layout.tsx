@@ -5,7 +5,7 @@ import './globals.css';
 const Interstate = localFont({
   src: [
     {
-      path: '../public/fonts/Interstate-Bold.otf',
+      path: '../public/fonts/Interstate-ExtraLight.otf',
       weight: '100',
       style: 'normal',
     },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children:React.ReactNode }) {
   return (
     <html lang="en" className={`${Interstate.variable}`}>
-      <body>{children}</body>
+      <body className="bg-white">{children}</body>
     </html>
   )
 }

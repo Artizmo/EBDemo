@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import MenuIcon from '@/components/icons/menu'
+import CloseIcon from '@/components/icons/close'
 
 type EBMenuListItem = {
   label: String
@@ -22,7 +23,7 @@ type EBMenuListItemProps = {
 export function EBMenuListItem({ label, url, onNext }: EBMenuListItemProps) {
   return (
     <div>
-      <button onClick={onNext} className="font-medium">{label}</button>
+      <button onClick={onNext} className="uppercase text-sm font-normal">{label}</button>
     </div>
   )
 }
@@ -56,17 +57,19 @@ export default function EBMenuList({ list }: EBMenuListProps) {
   return (
     <>
       {show ? (
-        <section className="shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
+        <section className="font-interstate shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
           <header className="flex justify-between">
             <button onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
-            <button onClick={handleOnClose}>X</button>
+            <button onClick={handleOnClose}>
+              <CloseIcon className="w-[24px]" />
+            </button>
           </header>
           <section className="pt-8 flex flex-col gap-y-4">
             {menu?.map((item, i) => (
               <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} label={item.label} url={item.url} />
             ))}
           </section>
-          <footer className="pt-8 flex flex-col gap-y-4">
+          <footer className="shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
             <div>Account Profile</div>
             <div>Current Orders</div>
             <div>My Wishlist</div>
