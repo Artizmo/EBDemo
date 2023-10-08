@@ -1,9 +1,32 @@
-import './globals.css';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import localFont from 'next/font/local'
+import './globals.css';
 
-// const overpass = Overpass_Mono({ subsets: ['latin'] })
-const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'], })
+const Interstate = localFont({
+  src: [
+    {
+      path: '../public/fonts/Interstate-Bold.otf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Interstate-Light.woff',
+      weight: '200',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/Interstate-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Interstate-Bold.woff',
+      weight: '600',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-interstate'
+})
 
 export const metadata: Metadata = {
   title: 'Eddie Bauer Demo',
@@ -14,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children:React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${Interstate.variable}`}>
       <body>{children}</body>
     </html>
   )

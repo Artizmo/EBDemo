@@ -8,6 +8,11 @@ const config: Config = {
     './public/**/*.{js,ts,jsx,tsx,mdx,svg}'
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        Interstate: ['var(--font-interstate)']
+      }
+    },
     colors: {
       red: '#ce0e2d',
       green: '#bed600',
