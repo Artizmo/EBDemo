@@ -12,8 +12,6 @@ const BloomreachMasthead = dynamic(() => import('@/data/bloomreach-masthead')
 
 export default function EBMastHead() {
   return (
-    <>
-      <DefaultMasthead />
-    </>
+    <DefaultMasthead />
   )
 }
