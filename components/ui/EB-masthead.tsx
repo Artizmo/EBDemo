@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-const DefaultMasthead = dynamic(() => import('@/data/default-masthead'))
+const DefaultMasthead = dynamic(() => import('@/data/default-masthead'), { ssr: false })
 const BloomreachMasthead = dynamic(() => import('@/data/bloomreach-masthead')
   .catch(() => {
     // eslint-disable-next-line react/display-name
