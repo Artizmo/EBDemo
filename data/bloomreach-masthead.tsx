@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-throw 'testing error!!!!!!!'
+// throw 'testing error!!!!!!!'
 
 export default function BloomreachMasthead() {
 
