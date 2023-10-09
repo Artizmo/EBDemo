@@ -8,6 +8,10 @@
     height: 100%;
   }
 
+  body {
+    @apply font-interstate;
+  }
+
   .dark-gradient {
     position: relative;
     display: inline-block;

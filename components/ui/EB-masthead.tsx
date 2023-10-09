@@ -1,7 +1,4 @@
-// 'use client'
-
 import dynamic from 'next/dynamic'
-// import Image from 'next/image'
 const DefaultMasthead = dynamic(() => import('@/data/default-masthead'))
 const BloomreachMasthead = dynamic(() => import('@/data/bloomreach-masthead')
   .catch(() => {
