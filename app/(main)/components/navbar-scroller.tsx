@@ -14,7 +14,7 @@ export default function NavbarScroller({ children }: ScrollHeaderProps)  {
   return (
     <div className={`w-full flex ${isHome ? 'absolute bg-transparent': 'relative bg-white'} flex-1 md:hidden p-2 items-center justify-between
       ${isHome && scrollDirection === 'equal' 
-        ? 'ease-out duration-300 transition-colors bg-transparent [&_svg]:fill-black' 
+        ? 'ease-out duration-300 transition-colors bg-transparent' 
         : 'bg-white z-[2] [&_svg]:fill-black'
       }`}
     >

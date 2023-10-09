@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import MenuIcon from '@/components/icons/menu'
 import CloseIcon from '@/components/icons/close'
@@ -18,9 +19,15 @@ type EBMenuListItemProps = {
   label: String
   url: String
   onNext: () => void
+  onClose: () => void
 }
 
-export function EBMenuListItem({ label, url, onNext }: EBMenuListItemProps) {
+export function EBMenuListItem({ label, url, onNext, onClose }: EBMenuListItemProps) {
+
+  if (url.length) {
+    return <Link href="/products" onClick={onClose} className="uppercase text-sm font-normal">{label}</Link>
+  }
+
   return (
     <div>
       <button onClick={onNext} className="uppercase text-sm font-normal">{label}</button>
@@ -58,7 +65,7 @@ export default function EBMenuList({ list }: EBMenuListProps) {
     <>
       {show ? (
         <section className="font-interstate shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
-          <header className="flex justify-between">
+          <header className="flex justify-between font-light">
             <button onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
             <button onClick={handleOnClose}>
               <CloseIcon className="w-[24px]" />
@@ -66,14 +73,14 @@ export default function EBMenuList({ list }: EBMenuListProps) {
           </header>
           <section className="pt-8 flex flex-col gap-y-4">
             {menu?.map((item, i) => (
-              <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} label={item.label} url={item.url} />
+              <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
             ))}
           </section>
-          <footer className="shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
-            <div>Account Profile</div>
-            <div>Current Orders</div>
-            <div>My Wishlist</div>
-            <div>My Store</div>
+          <footer className="font-light shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
+            <div>Profile settings</div>
+            <div>Track my order</div>
+            <div>My wishlist</div>
+            <div>My store</div>
             <div>Signout</div>
           </footer>
         </section>
