@@ -1,7 +1,7 @@
-'use client'
+// 'use client'
 
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
+// import Image from 'next/image'
 const DefaultMasthead = dynamic(() => import('@/data/default-masthead'))
 const BloomreachMasthead = dynamic(() => import('@/data/bloomreach-masthead')
   .catch(() => {
@@ -12,6 +12,6 @@ const BloomreachMasthead = dynamic(() => import('@/data/bloomreach-masthead')
 
 export default function EBMastHead() {
   return (
-    <DefaultMasthead />
+    <BloomreachMasthead />
   )
 }

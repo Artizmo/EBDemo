@@ -6,9 +6,7 @@ export default function DefaultMasthead() {
       <h2 className="absolute text-white text-[42px] font-normal uppercase leading-[48px] p-4 bottom-0 md:hidden">
         experience the outdoor & live your adventure
       </h2>
-      <div className="absolute mb-[-2rem] border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center ml-4 text-[white] leading-[normal] p-2 bottom-0 md:hidden">
-        learn more
-      </div>
+      <div className="border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center ml-4 absolute text-[white] leading-[normal] mb-[-2rem] p-2 bottom-0 md:hidden">learn more</div>
       <Image
         src="/images/splash4.png"
         alt=""

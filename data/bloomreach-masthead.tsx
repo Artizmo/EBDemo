@@ -6,11 +6,13 @@ export default function BloomreachMasthead() {
 
   return (
     <>
-      <div className="absolute text-white text-[42px] font-normal uppercase leading-[48px] p-4 bottom-0 md:hidden">
+      <h2 className="absolute text-white text-[42px] font-normal uppercase leading-[48px] p-4 bottom-0 md:hidden">
         Begin your autumn journey with the right gear!
+      </h2>
+      <div className="absolute bottom-0 ml-4 flex gap-x-4">
+        <div className="border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center text-[white] leading-[normal] mb-[-2rem] p-2 bottom-0 md:hidden">women</div>
+        <div className="ml-[32rem] border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center text-[white] leading-[normal] mb-[-2rem] p-2 bottom-0 md:hidden">Men</div>
       </div>
-      <div className="border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center ml-4 absolute text-[white] leading-[normal] mb-[-3rem] p-2 bottom-0 md:hidden">women</div>
-      <div className="border text-[14px] uppercase font-light border-solid min-w-[5rem] flex justify-center ml-32 absolute text-[white] leading-[normal] mb-[-3rem] p-2 bottom-0 md:hidden">Men</div>
       <Image
         src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/splash3.webp"
         alt=""
