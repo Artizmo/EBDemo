@@ -84,10 +84,10 @@ export default function EBMenuList({ list }: EBMenuListProps) {
         </header>
         <section className="pt-8 flex flex-col">
           {menu?.map((item, i) => (
-            <EBMenuListItem className="h-8 mt-2 pb-2 border-b-[#d6d6d6] border-b border-solid" key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
+            <EBMenuListItem className="flex items-center h-12 border-b-[#d6d6d6] border-b border-solid" key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
           ))}
         </section>
-        <footer className="font-light mt-4 pt-2 flex flex-col gap-y-4 text-[14px]">
+        <footer className="font-light mt-4 pt-2 flex flex-col gap-y-5 text-[14px]">
           <div className="flex items-center gap-x-4">
             <UserCogIcon className="w-5" />
             <span>Profile settings</span>
