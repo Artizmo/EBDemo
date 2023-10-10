@@ -64,8 +64,8 @@ export default function EBMenuList({ list }: EBMenuListProps) {
   return (
     <>
       {show && <div onClick={handleOnClose} className="bg-[#00000055] fixed inset-0" />}
-      <section className={`${!show ? 'translate-x-full' : null} transition-transform duration-[0.6s] ease-[cubic-bezier(0,0.67,0.58,1)] 
-      font-interstate shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0`}>
+      <section className={`${!show ? 'translate-x-full' : 'shadow-[-4px_0px_4px_0px_#24212159]'} transition-transform duration-[0.6s] ease-[cubic-bezier(0,0.67,0.58,1)] 
+      font-interstate p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0`}>
         <header className="flex justify-between font-light">
           <button className="uppercase text-[14px]" onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
           <button onClick={handleOnClose}>
