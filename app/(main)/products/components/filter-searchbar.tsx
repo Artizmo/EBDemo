@@ -1,8 +1,6 @@
 import FiltersIcon from '@/components/icons/filters'
 
-type FilterSearchbarProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
-
-export default function FilterSearchbar({ ...props }: FilterSearchbarProps) {
+export default function FilterSearchbar() {
   return (
     <div className="mx-4 flex items-center flex-1 overflow-hidden group/test">
       <div className="flex flex-1 justify-between border border-[#d6d6d6] rounded-[5px] overflow-auto">

@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import productsData from '@/data/products.json'
+import EBIconButton from '@/components/ui/EB-icon-button'
+import FiltersIcon from '@/components/icons/filters'
+import FiltersMenu from '@/app/(main)/products/components/filters-menu'
 
 type Product = {
   id: string
@@ -37,7 +40,10 @@ export default async function ProductsGrid({ filters }: ProductsGridProps) {
 
   return (
     <section className="flex flex-col">
-      <div className="my-2 capitalize font-normal text-[14px]">{filteredProducts.length} items</div>
+      <div className="my-2 capitalize font-normal text-[14px] flex justify-between">
+        <span>{filteredProducts.length} items</span>
+        <FiltersMenu />
+      </div>
       <div className="grid gap-4 grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
         {filteredProducts.map(product => (
           <div key={product.id}>

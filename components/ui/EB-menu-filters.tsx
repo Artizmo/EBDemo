@@ -11,17 +11,18 @@ import PinIcon from '@/components/icons/pin'
 import DoorIcon from '@/components/icons/door'
 import ArrowRightIcon from '@/components/icons/arrow-right'
 
-type EBMenuListItem = {
+type EBMenuFiltersItem = {
   label: string
   url?: string
-  categories?: EBMenuListItem[]
+  categories?: EBMenuFiltersItem[]
 }
 
-type EBMenuListProps = {
-  list: EBMenuListItem[]
+type EBMenuFiltersProps = {
+  children?: React.ReactElement
+  list?: EBMenuFiltersItem[]
 }
 
-type EBMenuListItemProps = {
+type EBMenuFiltersItemProps = {
   className: string
   label: string
   url?: string
@@ -29,7 +30,7 @@ type EBMenuListItemProps = {
   onClose: () => void
 }
 
-export function EBMenuListItem({ className, label, url, onNext, onClose }: EBMenuListItemProps) {
+export function EBMenuFiltersItem({ className, label, url, onNext, onClose }: EBMenuFiltersItemProps) {
 
   if (url?.length) {
     return <Link href="/products" onClick={onClose} className={`${className} leading-[24px] uppercase text-sm font-normal`}>{label}</Link>
@@ -45,8 +46,8 @@ export function EBMenuListItem({ className, label, url, onNext, onClose }: EBMen
   )
 }
 
-export default function EBMenuList({ list }: EBMenuListProps) {
-  const [menus, setMenus] = useState<EBMenuListItem[][]>([list])
+export default function EBMenuFilters({ children, list = [] }: EBMenuFiltersProps) {
+  const [menus, setMenus] = useState<EBMenuFiltersItem[][]>([list])
   const [show, setShow] = useState(false)
   
   const menu = useMemo(() => {
@@ -54,7 +55,7 @@ export default function EBMenuList({ list }: EBMenuListProps) {
     return nextMenu
   }, [menus])
 
-  const handleOnNextClick = (item: EBMenuListItem) => {
+  const handleOnNextClick = (item: EBMenuFiltersItem) => {
     if (item?.categories) {
       setMenus([...menus, item.categories])
     }
@@ -84,7 +85,7 @@ export default function EBMenuList({ list }: EBMenuListProps) {
         </header>
         <section className="pt-8 flex flex-col">
           {menu?.map((item, i) => (
-            <EBMenuListItem 
+            <EBMenuFiltersItem 
               className="flex items-center h-12 border-b-[#d6d6d6] border-b border-solid" 
               key={i} 
               onNext={() => handleOnNextClick(item)} 
@@ -117,8 +118,9 @@ export default function EBMenuList({ list }: EBMenuListProps) {
           </div>
         </footer>
       </section>
-      <button className="" onClick={() => setShow(true)}>
-        <MenuIcon className="header-icon fill-white w-[18px]" />
+      <button className="flex items-center gap-x-2" onClick={() => setShow(true)}>
+        <MenuIcon className="header-icon fill-black w-[18px]" />
+        {children}
       </button>
     </>
   )

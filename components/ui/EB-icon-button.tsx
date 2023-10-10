@@ -6,6 +6,9 @@ type EBIconButtonProps = {
 
 export default function EBIconButton({ icon, label, onClick }: EBIconButtonProps) {
   return (
-    <button onClick={onClick}>{label}</button>
+    <section>
+      {icon}
+      <button onClick={onClick}>{label}</button>
+    </section>
   )
 }
