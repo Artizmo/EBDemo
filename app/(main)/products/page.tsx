@@ -4,7 +4,15 @@ import ProductsFiltersSkeleton from '@/app/(main)/products/components/products-f
 import ProductsGrid from '@/app/(main)/products/components/products-grid'
 import ProductsGridSkeleton from '@/app/(main)/products/components/products-grid-skeleton'
 
-export default async function ProductsPage() {
+type Filters = {
+  size?: string
+}
+
+type ProductsPageProps = {
+  searchParams: Filters
+}
+
+export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   return (
     <div className="gap-y-4 flex flex-col flex-1 text-[1rem] font-normal text-[1rem] sm:text-[12px] text-black '2xl':mx-[10%]">
       <div className="pl-4 pt-4 md:px-8 md:py-4 font-normal uppercase text-[14px]">Women / T-Shirts & Tanks</div>
@@ -15,7 +23,7 @@ export default async function ProductsPage() {
           </Suspense>
         </div>
         <Suspense fallback={<ProductsGridSkeleton />}>
-          <ProductsGrid />
+          <ProductsGrid filters={searchParams} />
         </Suspense>
       </div>
     </div>

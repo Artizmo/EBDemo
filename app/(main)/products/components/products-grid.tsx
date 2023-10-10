@@ -7,10 +7,19 @@ type Product = {
   thumbnail: string
   thumbnailEB: string
   colors: string[]
+  size?: string
   price: string
   rating?: number | null
   reviewCount?: number | null
   promo?: string | null
+}
+
+type Filters = {
+  size?: string
+}
+
+type ProductsGridProps = {
+  filters: Filters
 }
 
 const getProducts = async (): Promise<Product[]> => {
@@ -22,16 +31,17 @@ const getProducts = async (): Promise<Product[]> => {
   });
 }
 
-export default async function ProductsGrid() {
+export default async function ProductsGrid({ filters }: ProductsGridProps) {
   const products: Product[] = await getProducts()
+  const filteredProducts = products.filter(p => p?.size === filters?.size)
 
   return (
     <section className="flex flex-col">
-      <div className="my-2 capitalize font-normal text-[14px]">{products.length} items</div>
+      <div className="my-2 capitalize font-normal text-[14px]">{filteredProducts.length} items</div>
       <div className="grid gap-4 grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)] xl:grid-cols-[repeat(4,1fr)]">
-        {products.map(product => (
+        {filteredProducts.map(product => (
           <div key={product.id}>
-            <Image src={product.thumbnailEB} alt="" width={400} height={400} />
+            <Image src={product.thumbnailEB} alt="" priority width={400} height={400} />
             <div className="flex items-center gap-x-2 px-0 py-2">
               {product.colors.slice(0, 4).map(color => (
                 <div key={color} style={{ backgroundColor: color }} className={`w-[1.25rem] h-[1.25rem] rounded-full`} />

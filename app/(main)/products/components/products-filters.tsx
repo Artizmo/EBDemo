@@ -1,5 +1,5 @@
 import filters from '@/data/filters.json'
-import EBCheckbox from '@/components/ui/EB-checkbox'
+import ProductFilter from '@/app/(main)/products/components/product-filter'
 
 type FilterOption = {
   label: string,
@@ -29,8 +29,8 @@ export default async function ProductsFilters() {
         <div key={filter.label} className="px-4 pb-2 border-b-[#d6d6d6] border-b border-solid font-normal">
           <div className="uppercase font-semibold">{filter.label}</div>
           {filter.options.map(option => (
-            <div key={option.value} className="w-fit my-2 ml-4 capitalize">
-              <EBCheckbox label={option.label} />
+            <div key={option.value} className="w-fit my-2 ml-4 uppercase">
+              <ProductFilter filter={option} category={filter.label} />
             </div>
           ))}
         </div>
