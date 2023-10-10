@@ -9,6 +9,7 @@ import ListCheckIcon from '@/components/icons/list-check'
 import HeartIcon from '@/components/icons/heart'
 import PinIcon from '@/components/icons/pin'
 import DoorIcon from '@/components/icons/door'
+import ArrowRightIcon from '@/components/icons/arrow-right'
 
 type EBMenuListItem = {
   label: String
@@ -21,21 +22,25 @@ type EBMenuListProps = {
 }
 
 type EBMenuListItemProps = {
+  className: String
   label: String
   url: String
   onNext: () => void
   onClose: () => void
 }
 
-export function EBMenuListItem({ label, url, onNext, onClose }: EBMenuListItemProps) {
+export function EBMenuListItem({ className, label, url, onNext, onClose }: EBMenuListItemProps) {
 
   if (url.length) {
-    return <Link href="/products" onClick={onClose} className="uppercase text-sm font-normal">{label}</Link>
+    return <Link href="/products" onClick={onClose} className={`${className} leading-[24px] uppercase text-sm font-normal`}>{label}</Link>
   }
 
   return (
-    <div>
-      <button onClick={onNext} className="uppercase text-sm font-normal">{label}</button>
+    <div className={`${className}`}>
+      <button onClick={onNext} className="justify-between items-center w-full flex text-left uppercase text-sm font-normal">
+        <span>{label}</span>
+        <ArrowRightIcon className="w-[24px]" />
+      </button>
     </div>
   )
 }
@@ -70,19 +75,19 @@ export default function EBMenuList({ list }: EBMenuListProps) {
     <>
       {show && <div onClick={handleOnClose} className="bg-[#00000055] fixed inset-0" />}
       <section className={`${!show ? 'translate-x-full' : 'shadow-[-4px_0px_4px_0px_#24212159]'} transition-transform duration-[0.6s] ease-[cubic-bezier(0,0.67,0.58,1)] 
-      font-interstate p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0`}>
+      font-interstate p-4 fixed bg-white min-w-[85%] flex flex-col right-0 inset-y-0`}>
         <header className="flex justify-between font-light">
           <button className="uppercase text-[14px]" onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Welcome, Han Solo'}</button>
           <button onClick={handleOnClose}>
             <CloseIcon className="w-[24px]" />
           </button>
         </header>
-        <section className="pt-8 flex flex-col gap-y-4">
+        <section className="pt-8 flex flex-col">
           {menu?.map((item, i) => (
-            <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
+            <EBMenuListItem className="h-8 mt-2 pb-2 border-b-[#d6d6d6] border-b border-solid" key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
           ))}
         </section>
-        <footer className="font-light shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
+        <footer className="font-light mt-4 pt-2 flex flex-col gap-y-4 text-[14px]">
           <div className="flex items-center gap-x-4">
             <UserCogIcon className="w-5" />
             <span>Profile settings</span>
