@@ -63,32 +63,31 @@ export default function EBMenuList({ list }: EBMenuListProps) {
 
   return (
     <>
-      {show ? (
-        <section className="font-interstate shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0">
-          <header className="flex justify-between font-light">
-            <button onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
-            <button onClick={handleOnClose}>
-              <CloseIcon className="w-[24px]" />
-            </button>
-          </header>
-          <section className="pt-8 flex flex-col gap-y-4">
-            {menu?.map((item, i) => (
-              <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
-            ))}
-          </section>
-          <footer className="font-light shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
-            <div>Profile settings</div>
-            <div>Track my order</div>
-            <div>My wishlist</div>
-            <div>My store</div>
-            <div>Signout</div>
-          </footer>
+      {show && <div onClick={handleOnClose} className="bg-[#00000055] fixed inset-0" />}
+      <section className={`${!show ? 'translate-x-full' : null} transition-transform duration-[0.6s] ease-[cubic-bezier(0,0.67,0.58,1)] 
+      font-interstate shadow-[-4px_0px_4px_0px_#8a8a8a59] p-4 fixed bg-white min-w-[80%] flex flex-col right-0 inset-y-0`}>
+        <header className="flex justify-between font-light">
+          <button className="uppercase text-[14px]" onClick={handleOnPrevClick}>{menus.length > 1 ? 'back' : 'Eddie Bauer'}</button>
+          <button onClick={handleOnClose}>
+            <CloseIcon className="w-[24px]" />
+          </button>
+        </header>
+        <section className="pt-8 flex flex-col gap-y-4">
+          {menu?.map((item, i) => (
+            <EBMenuListItem key={i} onNext={() => handleOnNextClick(item)} onClose={handleOnClose} label={item.label} url={item.url} />
+          ))}
         </section>
-      ) : (
-        <button className="" onClick={() => setShow(true)}>
-          <MenuIcon className="header-icon fill-white w-[18px]" />
-        </button>
-      )}
+        <footer className="font-light shadow-[0_-1px_0_0_#d6d6d6] mt-4 pt-4 flex flex-col gap-y-4 text-[14px]">
+          <div>Profile settings</div>
+          <div>Track my order</div>
+          <div>My wishlist</div>
+          <div>My store</div>
+          <div>Sign out</div>
+        </footer>
+      </section>
+      <button className="" onClick={() => setShow(true)}>
+        <MenuIcon className="header-icon fill-white w-[18px]" />
+      </button>
     </>
   )
 }
