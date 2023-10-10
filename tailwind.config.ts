@@ -5,7 +5,8 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './public/**/*.{js,ts,jsx,tsx,mdx,svg}'
+    './public/**/*.{js,ts,jsx,tsx,mdx,svg}',
+    './data/**/*.{js,ts,jsx,tsx,mdx,svg}'
   ],
   theme: {
     extend: {

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function MainPage() {
   return ( 
-    <div className="w-full h-[600px]">
+    <div className="w-full h-screen">
       <EBMastHead />
       <Image
         src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/promo4.gif"
