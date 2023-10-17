@@ -1,14 +1,13 @@
 import categoryData from '@/data/categories.json'
 import EBMenuList from '@/components/ui/EB-menu-list'
 
-type Category = {
-  label: String
-  url: String
-  test?: String
-  categories?: Category[]
+type EBMenuListItem = {
+  label: string
+  url?: string
+  categories?: EBMenuListItem[]
 }
 
-const getCategories = async (): Promise<Category[]> => {
+const getCategories = async (): Promise<EBMenuListItem[]> => {
   const TIMER = Math.floor(Math.random() * 1000) + 200
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -24,7 +23,7 @@ const EBThirdPartyComp = () => {
 }
 
 export default async function NavbarMenu() {
-  const categories: Category[] = await getCategories()
+  const categories: EBMenuListItem[] = await getCategories()
 
   return (
     <EBMenuList list={categories} />

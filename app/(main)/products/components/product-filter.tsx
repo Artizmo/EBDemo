@@ -19,7 +19,6 @@ export default function ProductFilter({ category, filter }: ProductFilterProps )
     const params = new URLSearchParams()
     if (state) params.set(category, filter.label)
     router.push(`/products/?${params}`);
-    router.refresh()
     console.log('bingo handling filter', filter)
   }
 
