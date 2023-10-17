@@ -3,6 +3,7 @@ import productsData from '@/data/products.json'
 import EBIconButton from '@/components/ui/EB-icon-button'
 import FiltersIcon from '@/components/icons/filters'
 import FiltersMenu from '@/app/(main)/products/components/filters-menu'
+import { cookies } from 'next/headers';
 
 type Product = {
   id: string
@@ -37,6 +38,8 @@ const getProducts = async (): Promise<Product[]> => {
 export default async function ProductsGrid({ filters }: ProductsGridProps) {
   const products: Product[] = await getProducts()
   const filteredProducts = products.filter(p => p?.size === filters?.size)
+
+  console.log('bingo cookies', cookies())
 
   return (
     <section className="flex flex-col">

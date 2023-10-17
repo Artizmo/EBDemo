@@ -23,6 +23,7 @@ export default function ProductFilter({ category, filter }: ProductFilterProps )
   }
 
   return (
+    // <div>test</div>
     <EBCheckbox label={filter.label} onChange={handleOnChange} />
   )
 }

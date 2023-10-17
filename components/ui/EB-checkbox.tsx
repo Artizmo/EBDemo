@@ -16,14 +16,14 @@ const EBCheckbox = forwardRef(function EBCheckbox({
   const [check, setCheck] = useState(false)
 
   const handleOnClick = () => {
-      setCheck(!check)
-      if (typeof onChange === 'function') onChange(!check)
-      console.log('bingo test click', !check)
+    setCheck(!check)
+    if (typeof onChange === 'function') onChange(!check)
+    console.log('bingo test click', !check)
   }
 
   return (
     <div className="flex gap-x-2 items-center [&>input]:hidden leading-[initial]">
-      <input type="checkbox" checked={check} />
+      <input type="checkbox" checked={check} onChange={handleOnClick} />
       <button ref={ref} id={label} type='button' 
         className={`flex items-center justify-center cursor-default w-[18px] h-[18px] border ${check ? 'border-teal' : 'border-[#737373]'} rounded-[3px]`}
         onClick={handleOnClick}
