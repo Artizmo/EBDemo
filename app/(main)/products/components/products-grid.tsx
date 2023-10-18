@@ -39,7 +39,7 @@ export default async function ProductsGrid({ filters }: ProductsGridProps) {
   const products: Product[] = await getProducts()
   const filteredProducts = products.filter(p => p?.size === filters?.size)
 
-  console.log('bingo cookies', cookies())
+  // console.log('bingo cookies', cookies())
 
   return (
     <section className="flex flex-col">
