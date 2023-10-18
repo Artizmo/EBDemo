@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <nav className="hidden md:flex bg-light-gray p-2 text-black font-medium uppercase text-[14px] justify-center gap-x-10 hover:[&>a]:shadow-[0_4px_0_0_teal]">
+    <nav className="shadow-[0px_2px_2px_0px_#73737352] relative hidden md:flex bg-light-gray p-2 text-black font-medium uppercase text-[14px] justify-center gap-x-10 hover:[&>a]:shadow-[0_4px_0_0_teal]">
       <Link href="/products">women</Link>
       <Link href="/products">men</Link>
       <Link href="/products">outerwear</Link>

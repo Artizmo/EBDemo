@@ -20,7 +20,7 @@ export default function BloomreachMasthead() {
         priority
         width={0}
         height={0}
-        className="w-full h-screen object-cover"
+        className="md:hidden w-full h-screen object-cover"
       />
     </>
   )
