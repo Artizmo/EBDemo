@@ -1,8 +1,39 @@
-mock data resource
-https://www.mockaroo.com/
+-reduce NPM package to require libraries
+-update libraries to latest stable
+-introduce Next 13, Tailwind, TypeScript
+-mobile-first development, performance agenda
+-maintain the same dependencies as we have now (ie Bloomreach) but focus on code performance
+-chunk the primary work by page
+  -main
+  -CDP
+  -PDP
+  -cart
+  -checkout
+-pick a chunk above as a Q4 perf. guinea pig
+-optimize our folder structure
+  ie:
+    /apps
+      (main)
+        /products
+          /_components
+          page.tsx
+        /search
+        layout.tsx
+    /graphql
+    /lib
+    /public
+    /tests
+-reintroduce third party scripts that are currently being used via Next Script tools
+-identify Bloomreach and other third party hard dependencies and see how we can interface them
+  -create an EBComponent that itself calls these dependencies and via try/catch can handle errors
+  -ie Bloomreach masthead gets imported but if it fails, the site fails. An interface should prevent this outcome
+-identify business logic for this particular page.
+  -what are the transactions, UI/UX required functionality?
+  -what are the rules that but be obliged?
+  -what API calls must be occur and when?
+-cleanup and optimize local storage, cookies.
+  -what is the bare minimum (if at all) that is required to persist on the client side?
 
-Icon resource
-https://remixicon.com/
 
 SOLID Principles in React
 
@@ -27,3 +58,13 @@ I - interface segregation
 D - dependency inversion
   * Components should require abstract props according to their nature.
   * ie. ListComponent that renders a list shouldn't be opinionated about the list itself, where it comes from, or how it's retrieved.
+
+
+resources
+---------
+
+mock data resource
+https://www.mockaroo.com/
+
+Icon resource
+https://remixicon.com/

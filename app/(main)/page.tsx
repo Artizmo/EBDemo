@@ -1,14 +1,11 @@
 import EBMastHead from '@/components/ui/EB-masthead'
 import Image from 'next/image'
-import { headers } from 'next/headers';
 
 export default function MainPage() {
-  const h = headers()
-  console.log('bingo headers', h.get('x-url'))
   return ( 
     <div className="w-full h-screen">
       <EBMastHead />
-      {/* <Image
+      <Image
         src="https://res.cloudinary.com/de0ei4yhn/image/upload/v1694211177/EBDemo/promo4.gif"
         alt=""
         sizes="90vw"
@@ -25,7 +22,7 @@ export default function MainPage() {
         width={0}
         height={0}
         className="hidden md:block w-full h-auto"
-      /> */}
+      />
       <article className="absolute p-4 gap-x-4 flex flex-col md:hidden">
         <h2 className="text-[26px] font-medium">Style Inspiration</h2>
         <h3 className="text-[16px] font-light">Your favorite styles, scaled up to perfection, just for you.</h3>
