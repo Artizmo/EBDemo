@@ -18,8 +18,8 @@ const config: Config = {
       red: '#ce0e2d',
       green: '#bed600',
       teal: '#0099A8',
-      white: '#f3f3f3',
-      'light-gray': '#f9f9f9',
+      white: '#f9f9f9',
+      'light-gray': '#f3f3f3',
       gray: '#5a5a5a',
       black: '#363232',
       'black-50': '#00000099'
