@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Logo from '@/components/icons/logo'
-import Searchbar from '@/app/(main)/components/searchbar'
+import Searchbar from '@/app/(main)/_components/searchbar'
 import SearchIcon from '@/components/icons/search'
 import BagIcon from '@/components/icons/bag'
-import NavbarScroller from '@/app/(main)/components/navbar-scroller'
+import NavbarScroller from '@/app/(main)/_components/navbar-scroller'
 import NavbarMenu from './navbar-menu'
 
 export default function Navbar() {

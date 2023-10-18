@@ -1,4 +1,4 @@
-import Toolbar from '@/app/(main)/components/toolbar'
+import Toolbar from '@/app/(main)/_components/toolbar'
 import AdventureIcon from '@/components/icons/adventure'
 
 export default function Banner() {
